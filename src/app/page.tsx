@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { useState, useEffect } from "react";
 
 interface Result {
@@ -135,8 +136,8 @@ export default function Home() {
         )}
       </div>
 
-      <footer className="mt-8 text-sm text-gray-400">
-        &copy; 2025 جميع الحقوق محفوظة
+      <footer className="mt-8 text-lg text-white">
+        <Link href="https://montagab.vercel.app/">Developed with love by <span className="underline underline-offset-2">Montagab</span></Link>
       </footer>
     </div>
   );
