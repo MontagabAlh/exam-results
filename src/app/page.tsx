@@ -58,7 +58,7 @@ export default function HomePage() {
             </header>
 
             {/* Main Content */}
-            <main className="flex-1 flex items-center justify-center my-4 md:mt-[-50px] px-4">
+            <main className="flex-1 flex items-center justify-center my-4 md:mt-[-10px] px-4">
                 <div className="container mx-auto">
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
                         {faculties.map((faculty, index) => (
