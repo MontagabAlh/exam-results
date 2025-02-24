@@ -14,6 +14,7 @@ interface Result {
 export default function Home() {
   const [mounted, setMounted] = useState(false);
   const [studentNumber, setStudentNumber] = useState("");
+  const [studentNospy, setStudentNospy] = useState("1");
   const [studentName, setStudentName] = useState("");
   const [results, setResults] = useState<Result[]>([]);
   const [loading, setLoading] = useState(false);
@@ -33,10 +34,10 @@ export default function Home() {
     setLoading(true);
 
     try {
-      const response = await fetch("/api/proxy/med", {
+      const response = await fetch("/api/proxy/mec", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ number1: studentNumber }),
+        body: JSON.stringify({ number1: studentNumber , nospy: studentNospy}),
       });
 
       if (!response.ok) throw new Error("Server Error");
@@ -77,28 +78,40 @@ export default function Home() {
     <div className="bg-gray-900 text-gray-100 font-droid font-cairo relative">
       {/* الشريط العلوي */}
       <Link href={'/'} className="p-4 rounded-full bg-gradient-to-br from-gray-800 to-transparent absolute top-2 left-1">
-        <IoIosArrowBack className="w-6 h-6 text-white"/>
+        <IoIosArrowBack className="w-6 h-6 text-white" />
       </Link>
 
       <main className="container mx-auto px-4 pt-16 pb-8 ">
-        <h1 className="text-center text-lg font-bold mb-5">كلية الطب اليشري  - جامعة حمص </h1>
+        <h1 className="text-center text-lg font-bold mb-5">كلية الهندسة الميكانيكية و الكهربائية - جامعة حمص </h1>
         <div className="max-w-3xl mx-auto bg-gray-800 rounded-2xl shadow-2xl p-6">
           {/* قسم البحث */}
           <div className="mb-8">
             <div className="relative">
-              <div className="flex gap-4">
-                <input
-                  type="text"
-                  value={studentNumber}
-                  onChange={(e) => setStudentNumber(e.target.value)}
-                  placeholder="الرقم الجامعي"
-                  className="w-full bg-gray-700 rounded-lg px-6 py-4 text-lg focus:outline-none focus:ring-2 focus:ring-cyan-500 placeholder-gray-400"
-                  onKeyPress={(e) => e.key === 'Enter' && fetchResults()}
-                />
+              <div className="flex flex-col md:flex-row gap-4 items-center">
+                <div className="flex flex-col md:flex-row gap-4 w-full">
+                  <input
+                    type="text"
+                    value={studentNumber}
+                    onChange={(e) => setStudentNumber(e.target.value)}
+                    placeholder="الرقم الجامعي"
+                    className="w-full bg-gray-700 rounded-lg px-6 py-4 text-lg focus:outline-none focus:ring-2 focus:ring-cyan-500 placeholder-gray-400"
+                    onKeyPress={(e) => e.key === 'Enter' && fetchResults()}
+                  />
+                  <select value={studentNospy}
+                    onChange={(e) => setStudentNospy(e.target.value)} className="w-full bg-gray-700 rounded-lg px-6 py-4 text-lg focus:outline-none focus:ring-2 focus:ring-cyan-500 placeholder-gray-400 ">
+                    <option value={1}>الكترون</option>
+                    <option value={2}>طاقة</option>
+                    <option value={3}>تحكم</option>
+                    <option value={4}>قوى</option>
+                    <option value={5}>انتاج</option>
+                    <option value={6}>ميكاترونيك</option>
+                    <option value={7}>معادن</option>
+                  </select>
+                </div>
                 <button
                   onClick={fetchResults}
                   disabled={loading}
-                  className={`px-8 rounded-lg flex items-center gap-2 transition-all ${loading
+                  className={`px-8 py-4 md:py-5 w-full md:w-auto rounded-lg flex justify-center items-center gap-2 transition-all  ${loading
                     ? 'bg-gray-600 cursor-not-allowed'
                     : 'bg-cyan-600 hover:bg-cyan-700'
                     }`}
@@ -108,7 +121,7 @@ export default function Home() {
                   ) : (
                     <FiSearch className="text-xl" />
                   )}
-                  <span className="hidden sm:inline">بحث</span>
+                  <span className="inline">بحث</span>
                 </button>
               </div>
 

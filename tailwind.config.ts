@@ -13,6 +13,15 @@ export default {
         foreground: "var(--foreground)",
       },
     },
+    screens: {
+      xs: '350px',
+      sm: '576px',
+      md: '768px',
+      lg: '992px',
+      xl: '1024px',
+      xxl: '1200px',
+      xxxl: '1400px'
+    },
     fontFamily: {
       cairo: ['var(--font-cairo)', 'sans-serif'],
     }

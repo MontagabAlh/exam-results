@@ -15,7 +15,8 @@ export default function Footer() {
                         Montagab
                     </Link>
                 </p>
-                <p className="mt-2 text-sm">جميع الحقوق محفوظة © {new Date().getFullYear()}</p>
+                <p className="mt-2 text-sm">هذا المشروع هو عمل طلابي لا يهدف إلى الربح وغير تابع لأي منظمة أو جهة رسمية كانت أم غير رسمية</p>
+                <p className="mt-2  text-cyan-400 text-lg">انتظروا التحديثات القادمة 🤩</p>
             </div>
         </footer>
     )

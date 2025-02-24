@@ -1,6 +1,8 @@
 "use client";
+import Link from "next/link";
 import { useState, useEffect } from "react";
 import { FiSearch, FiLoader, FiAlertTriangle } from "react-icons/fi";
+import { IoIosArrowBack } from "react-icons/io";
 
 interface Result {
   subject: string;
@@ -72,11 +74,13 @@ export default function Home() {
   if (!mounted) return null;
 
   return (
-    <div className="bg-gray-900 text-gray-100 font-droid font-cairo">
+    <div className="bg-gray-900 text-gray-100 font-droid font-cairo relative">
       {/* الشريط العلوي */}
-      
+      <Link href={'/'} className="p-4 rounded-full bg-gradient-to-br from-gray-800 to-transparent absolute top-2 left-1">
+        <IoIosArrowBack className="w-6 h-6 text-white"/>
+      </Link>
 
-      <main className="container mx-auto px-4 py-8">
+      <main className="container mx-auto px-4 pt-16 pb-8 ">
         <h1 className="text-center text-lg font-bold mb-5">كلية الهندسة المعمارية  - جامعة حمص </h1>
         <div className="max-w-3xl mx-auto bg-gray-800 rounded-2xl shadow-2xl p-6">
           {/* قسم البحث */}

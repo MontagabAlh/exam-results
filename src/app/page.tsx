@@ -2,9 +2,12 @@
 import Link from "next/link";
 import { BsBuildingsFill } from "react-icons/bs";
 import { FaTooth } from "react-icons/fa";
+import { FaGears, FaOilWell } from "react-icons/fa6";
+import { GiGardeningShears } from "react-icons/gi";
 import { IoIosHeart } from "react-icons/io";
 import { IoLaptop } from "react-icons/io5";
 import { MdMedication } from "react-icons/md";
+import { TbBulldozer } from "react-icons/tb";
 
 export default function HomePage() {
     const faculties = [
@@ -37,16 +40,44 @@ export default function HomePage() {
             hover: "hover:shadow-blue-500/20"
         },
         {
+            name: "كلية الهندسة المدنية",
+            path: "/civil",
+            icon: <TbBulldozer className="w-8 h-8 text-white" />,
+            color: "from-blue-500 to-cyan-500",
+            hover: "hover:shadow-blue-500/20"
+        },
+        {
             name: "كلية الهندسة المعمارية",
             path: "/archi",
             icon: <BsBuildingsFill className="w-8 h-8 text-white" />,
             color: "from-blue-500 to-cyan-500",
             hover: "hover:shadow-blue-500/20"
         },
+        {
+            name: "كلية الهندسة الكيميائية والبترولية",
+            path: "/petro",
+            icon: <FaOilWell className="w-8 h-8 text-white" />,
+            color: "from-blue-500 to-cyan-500",
+            hover: "hover:shadow-blue-500/20"
+        },
+        {
+            name: "كلية الهندسة الميكانيكية و الكهربائية",
+            path: "/mec",
+            icon: <FaGears className="w-8 h-8 text-white" />,
+            color: "from-blue-500 to-cyan-500",
+            hover: "hover:shadow-blue-500/20"
+        },
+        {
+            name: "كلية الهندسة الزراعية",
+            path: "/agri",
+            icon: <GiGardeningShears className="w-8 h-8 text-white" />,
+            color: "from-blue-500 to-cyan-500",
+            hover: "hover:shadow-blue-500/20"
+        },
     ];
 
     return (
-        <div className="min-h-screen bg-gray-900 flex flex-col">
+        <div className="h-full bg-gray-900 flex flex-col ">
             {/* Header */}
             <header className="pt-5 bg-gradient-to-b from-gray-800 to-transparent">
                 <div className="container mx-auto px-4 text-center">
@@ -58,7 +89,7 @@ export default function HomePage() {
             </header>
 
             {/* Main Content */}
-            <main className="flex-1 flex items-center justify-center my-4 md:mt-[-10px] px-4">
+            <main className="flex-1 flex items-center justify-center my-4  px-4">
                 <div className="container mx-auto">
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
                         {faculties.map((faculty, index) => (

@@ -33,7 +33,7 @@ export default function Home() {
     setLoading(true);
 
     try {
-      const response = await fetch("/api/proxy/med", {
+      const response = await fetch("/api/proxy/agri", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ number1: studentNumber }),
@@ -81,7 +81,7 @@ export default function Home() {
       </Link>
 
       <main className="container mx-auto px-4 pt-16 pb-8 ">
-        <h1 className="text-center text-lg font-bold mb-5">كلية الطب اليشري  - جامعة حمص </h1>
+        <h1 className="text-center text-lg font-bold mb-5">كلية الهندسة الزراعية - جامعة حمص </h1>
         <div className="max-w-3xl mx-auto bg-gray-800 rounded-2xl shadow-2xl p-6">
           {/* قسم البحث */}
           <div className="mb-8">
