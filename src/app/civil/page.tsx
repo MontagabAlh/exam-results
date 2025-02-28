@@ -37,7 +37,7 @@ export default function Home() {
       const response = await fetch("/api/proxy/civil", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ number1: studentNumber , nospy: studentNospy}),
+        body: JSON.stringify({ number1: studentNumber, nospy: studentNospy }),
       });
 
       if (!response.ok) throw new Error("Server Error");
@@ -74,6 +74,11 @@ export default function Home() {
 
   if (!mounted) return null;
 
+  const Specialties = [
+    { name: 'عام', value: 1 },
+    { name: 'بيئة', value: 2 },
+    { name: 'موارد', value: 3 },
+  ]
   return (
     <div className="bg-gray-900 text-gray-100 font-droid font-cairo relative">
       {/* الشريط العلوي */}
@@ -85,7 +90,7 @@ export default function Home() {
         <h1 className="text-center text-lg font-bold mb-5">كلية الهندسة المدنية - جامعة حمص </h1>
         <div className="max-w-3xl mx-auto bg-gray-800 rounded-2xl shadow-2xl p-6">
           {/* قسم البحث */}
-          <div className="mb-8">
+          <div className="">
             <div className="relative">
               <div className="flex flex-col md:flex-row gap-4 items-center">
                 <div className="flex flex-col md:flex-row gap-4 w-full">
@@ -99,9 +104,9 @@ export default function Home() {
                   />
                   <select value={studentNospy}
                     onChange={(e) => setStudentNospy(e.target.value)} className="w-full bg-gray-700 rounded-lg px-6 py-4 text-lg focus:outline-none focus:ring-2 focus:ring-cyan-500 placeholder-gray-400 ">
-                    <option value={1}>عام</option>
-                    <option value={2}>بيئة</option>
-                    <option value={3}>موارد</option>
+                    {Specialties.map((specialty, index) => (
+                      <option key={index} value={specialty.value}>{specialty.name}</option>
+                    ))}
                   </select>
                 </div>
                 <button
@@ -132,7 +137,7 @@ export default function Home() {
 
           {/* نتائج الطالب */}
           {studentName && (
-            <div className="mb-8">
+            <div className="my-8">
               <h2 className="text-xl font-semibold mb-4 text-cyan-400 text-center">
                 {studentName}
               </h2>

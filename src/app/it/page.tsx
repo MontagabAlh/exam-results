@@ -84,9 +84,9 @@ export default function Home() {
         <h1 className="text-center text-lg font-bold mb-5">كلية الهندسة المعلوماتية - جامعة حمص </h1>
         <div className="max-w-3xl mx-auto bg-gray-800 rounded-2xl shadow-2xl p-6">
           {/* قسم البحث */}
-          <div className="mb-8">
+          <div className="">
             <div className="relative">
-              <div className="flex gap-4">
+              <div className="flex flex-col md:flex-row gap-4">
                 <input
                   type="text"
                   value={studentNumber}
@@ -98,7 +98,7 @@ export default function Home() {
                 <button
                   onClick={fetchResults}
                   disabled={loading}
-                  className={`px-8 rounded-lg flex items-center gap-2 transition-all ${loading
+                  className={`px-8 py-4 md:py-5 w-full md:w-auto rounded-lg flex justify-center items-center gap-2 transition-all  ${loading
                     ? 'bg-gray-600 cursor-not-allowed'
                     : 'bg-cyan-600 hover:bg-cyan-700'
                     }`}
@@ -108,7 +108,7 @@ export default function Home() {
                   ) : (
                     <FiSearch className="text-xl" />
                   )}
-                  <span className="hidden sm:inline">بحث</span>
+                  <span className="inline">بحث</span>
                 </button>
               </div>
 
@@ -123,7 +123,7 @@ export default function Home() {
 
           {/* نتائج الطالب */}
           {studentName && (
-            <div className="mb-8">
+            <div className="my-8">
               <h2 className="text-xl font-semibold mb-4 text-cyan-400 text-center">
                 {studentName}
               </h2>

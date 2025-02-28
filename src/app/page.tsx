@@ -2,19 +2,21 @@
 import Link from "next/link";
 import { BsBuildingsFill } from "react-icons/bs";
 import { FaTooth } from "react-icons/fa";
-import { FaGears, FaOilWell } from "react-icons/fa6";
-import { GiGardeningShears } from "react-icons/gi";
-import { IoIosHeart } from "react-icons/io";
-import { IoLaptop } from "react-icons/io5";
-import { MdMedication } from "react-icons/md";
-import { TbBulldozer } from "react-icons/tb";
+import { FaGears, FaMoneyBillTrendUp, FaOilWell, FaSchoolFlag, FaUserDoctor } from "react-icons/fa6";
+import { GiCrane, GiFarmer } from "react-icons/gi";
+import { GoLaw } from "react-icons/go";
+import { IoMusicalNotes } from "react-icons/io5";
+import { LiaHotelSolid } from "react-icons/lia";
+import { LuCodeXml } from "react-icons/lu";
+import { MdHealthAndSafety, MdMedication, MdScience, MdSettingsApplications } from "react-icons/md";
+
 
 export default function HomePage() {
     const faculties = [
         {
             name: "كلية الطب البشري",
             path: "/med",
-            icon: <IoIosHeart className="w-8 h-8 text-white" />,
+            icon: <FaUserDoctor className="w-8 h-8 text-white" />,
             color: "from-blue-500 to-cyan-500",
             hover: "hover:shadow-blue-500/20"
         },
@@ -35,14 +37,14 @@ export default function HomePage() {
         {
             name: "كلية الهندسة المعلوماتية",
             path: "/it",
-            icon: <IoLaptop className="w-8 h-8 text-white" />,
+            icon: <LuCodeXml className="w-8 h-8 text-white" />,
             color: "from-blue-500 to-cyan-500",
             hover: "hover:shadow-blue-500/20"
         },
         {
             name: "كلية الهندسة المدنية",
             path: "/civil",
-            icon: <TbBulldozer className="w-8 h-8 text-white" />,
+            icon: <GiCrane className="w-8 h-8 text-white" />,
             color: "from-blue-500 to-cyan-500",
             hover: "hover:shadow-blue-500/20"
         },
@@ -70,7 +72,70 @@ export default function HomePage() {
         {
             name: "كلية الهندسة الزراعية",
             path: "/agri",
-            icon: <GiGardeningShears className="w-8 h-8 text-white" />,
+            icon: <GiFarmer className="w-8 h-8 text-white" />,
+            color: "from-blue-500 to-cyan-500",
+            hover: "hover:shadow-blue-500/20"
+        },
+        {
+            name: "كلية لااقتصاد",
+            path: "/economy",
+            icon: <FaMoneyBillTrendUp className="w-8 h-8 text-white" />,
+            color: "from-blue-500 to-cyan-500",
+            hover: "hover:shadow-blue-500/20"
+        },
+        {
+            name: "كلية الحقوق",
+            path: "/law",
+            icon: <GoLaw className="w-8 h-8 text-white" />,
+            color: "from-blue-500 to-cyan-500",
+            hover: "hover:shadow-blue-500/20"
+        },
+        {
+            name: "كلية السياحة",
+            path: "/tourism",
+            icon: <LiaHotelSolid className="w-8 h-8 text-white" />,
+            color: "from-blue-500 to-cyan-500",
+            hover: "hover:shadow-blue-500/20"
+        },
+        {
+            name: "كلية التربية الثانية",
+            path: "/education2",
+            icon: <FaSchoolFlag className="w-8 h-8 text-white" />,
+            color: "from-blue-500 to-cyan-500",
+            hover: "hover:shadow-blue-500/20"
+        },
+        {
+            name: "كلية العلوم",
+            path: "/science",
+            icon: <MdScience className="w-8 h-8 text-white" />,
+            color: "from-blue-500 to-cyan-500",
+            hover: "hover:shadow-blue-500/20"
+        },
+        {
+            name: "كلية العلوم الثانية",
+            path: "/science2",
+            icon: <MdScience className="w-8 h-8 text-white" />,
+            color: "from-blue-500 to-cyan-500",
+            hover: "hover:shadow-blue-500/20"
+        },
+        {
+            name: "كلية العلوم الصحية",
+            path: "/healthy",
+            icon: <MdHealthAndSafety className="w-8 h-8 text-white" />,
+            color: "from-blue-500 to-cyan-500",
+            hover: "hover:shadow-blue-500/20"
+        },
+        {
+            name: "كلية التربية الموسيقية",
+            path: "/music",
+            icon: <IoMusicalNotes className="w-8 h-8 text-white" />,
+            color: "from-blue-500 to-cyan-500",
+            hover: "hover:shadow-blue-500/20"
+        },
+        {
+            name: "الكلية التطبيقية",
+            path: "/applied",
+            icon: <MdSettingsApplications className="w-8 h-8 text-white" />,
             color: "from-blue-500 to-cyan-500",
             hover: "hover:shadow-blue-500/20"
         },

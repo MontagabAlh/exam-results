@@ -73,7 +73,15 @@ export default function Home() {
   };
 
   if (!mounted) return null;
-
+  const Specialties = [
+    { name: 'الكترون', value: 1 },
+    { name: 'طاقة', value: 2 },
+    { name: 'تحكم', value: 3 },
+    { name: 'قوى', value: 4 },
+    { name: 'انتاج', value: 5 },
+    { name: 'ميكاترونيك', value: 6 },
+    { name: 'معادن', value: 7 },
+  ]
   return (
     <div className="bg-gray-900 text-gray-100 font-droid font-cairo relative">
       {/* الشريط العلوي */}
@@ -85,7 +93,7 @@ export default function Home() {
         <h1 className="text-center text-lg font-bold mb-5">كلية الهندسة الميكانيكية و الكهربائية - جامعة حمص </h1>
         <div className="max-w-3xl mx-auto bg-gray-800 rounded-2xl shadow-2xl p-6">
           {/* قسم البحث */}
-          <div className="mb-8">
+          <div className="">
             <div className="relative">
               <div className="flex flex-col md:flex-row gap-4 items-center">
                 <div className="flex flex-col md:flex-row gap-4 w-full">
@@ -99,13 +107,9 @@ export default function Home() {
                   />
                   <select value={studentNospy}
                     onChange={(e) => setStudentNospy(e.target.value)} className="w-full bg-gray-700 rounded-lg px-6 py-4 text-lg focus:outline-none focus:ring-2 focus:ring-cyan-500 placeholder-gray-400 ">
-                    <option value={1}>الكترون</option>
-                    <option value={2}>طاقة</option>
-                    <option value={3}>تحكم</option>
-                    <option value={4}>قوى</option>
-                    <option value={5}>انتاج</option>
-                    <option value={6}>ميكاترونيك</option>
-                    <option value={7}>معادن</option>
+                      {Specialties.map((specialty, index) => (
+                      <option key={index} value={specialty.value}>{specialty.name}</option>
+                    ))}
                   </select>
                 </div>
                 <button
@@ -136,7 +140,7 @@ export default function Home() {
 
           {/* نتائج الطالب */}
           {studentName && (
-            <div className="mb-8">
+            <div className="my-8">
               <h2 className="text-xl font-semibold mb-4 text-cyan-400 text-center">
                 {studentName}
               </h2>
