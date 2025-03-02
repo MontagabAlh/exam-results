@@ -149,7 +149,7 @@ export default function Home() {
                   >
                     <div className="flex flex-wrap-reverse justify-center items-center gap-4 w-full">
                       <div className="flex items-center gap-10   text-gray-300">
-                        <div className={`text-center px-4 py-2 rounded-lg ${result.final >= 60
+                        <div className={`text-center px-4 py-2 rounded-lg ${result.final >= 50
                           ? 'bg-green-900/50 text-green-300'
                           : 'bg-red-900/50 text-red-300'
                           }`}>
