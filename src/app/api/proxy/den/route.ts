@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+
 // دالة لتحويل الأرقام الهندية إلى غربية
 function convertHindiToWestern(numberStr: string): string {
   const hindiToWesternMap: { [key: string]: string } = {
@@ -19,8 +20,9 @@ function convertHindiToWestern(numberStr: string): string {
 
 export async function POST(req: Request) {
   try {
-    const { number1 : originalNumber, nospy } = await req.json();
-    if (!originalNumber || !nospy) {
+    const { number1: originalNumber } = await req.json();
+    
+    if (!originalNumber) {
       return NextResponse.json({ error: "❌ الرقم الجامعي مطلوب." }, { status: 400 });
     }
 
