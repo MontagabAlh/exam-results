@@ -1,8 +1,8 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: " النتائج الإمتحانية - كلية السياحة",
-    description: "النتائج الإمتحانية كلية السياحة جامعة حمص",
+    title: " النتائج الإمتحانية - كلية التربية",
+    description: "النتائج الإمتحانية كليةالتربية جامعة حمص",
 };
 
 export default function RootLayout({

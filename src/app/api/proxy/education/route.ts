@@ -65,7 +65,7 @@ export async function POST(req: Request) {
     formData.append("number1", number1);
 
     // استدعاء `fetchWithDualRequests` لإرسال طلبين معًا
-    const response = await fetchWithDualRequests("https://exam.homs-univ.edu.sy/exam-music/re.php", {
+    const response = await fetchWithDualRequests("https://exam.homs-univ.edu.sy/exam-education/re.php", {
       method: "POST",
       body: formData,
     });

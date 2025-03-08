@@ -12,7 +12,7 @@ const cairoFont = Cairo({
 
 export const metadata: Metadata = {
   title: " النتائج الإمتحانية - جامعة حمص",
-  description: "النتائج الإمتحانية لكليات جامعة حمص",
+  description: "النتائج الإمتحانية لمختلف كليات جامعة حمص",
 };
 
 export default function RootLayout({

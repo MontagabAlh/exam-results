@@ -98,6 +98,13 @@ export default function HomePage() {
             hover: "hover:shadow-blue-500/20"
         },
         {
+            name: "كلية التربية",
+            path: "/education",
+            icon: <FaSchoolFlag className="w-8 h-8 text-white" />,
+            color: "from-blue-500 to-cyan-500",
+            hover: "hover:shadow-blue-500/20"
+        },
+        {
             name: "كلية التربية الثانية",
             path: "/education2",
             icon: <FaSchoolFlag className="w-8 h-8 text-white" />,
